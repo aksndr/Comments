@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Comments</display-name>
+    <welcome-file-list>
+        <welcome-file>
+            index.html
+        </welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>GetDocumentCommentsServlet</servlet-name>
+        <servlet-class>ru.aksndr.GetDocumentCommentsServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateDocumentCommentsServlet</servlet-name>
+        <servlet-class>ru.aksndr.UpdateDocumentCommentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetCommentsTemplatesServlet</servlet-name>
+        <servlet-class>ru.aksndr.GetCommentsTemplatesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetDocumentCommentsServlet</servlet-name>
+        <url-pattern>/getDocumentComments</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateDocumentCommentsServlet</servlet-name>
+        <url-pattern>/updateDocumentComments</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetCommentsTemplatesServlet</servlet-name>
+        <url-pattern>/getCommentsTemplates</url-pattern>
+    </servlet-mapping>
+</web-app>
