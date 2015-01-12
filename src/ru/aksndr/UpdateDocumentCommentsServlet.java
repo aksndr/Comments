@@ -28,9 +28,6 @@ public class UpdateDocumentCommentsServlet extends HttpServlet {
     }
 
     private String getTestData() {
-        String retValue = "updated";
-
-
-        return retValue;
+        return "updated";
     }
 }

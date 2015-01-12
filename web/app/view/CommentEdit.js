@@ -1,11 +1,9 @@
 Ext.define('C.view.CommentEdit', {
     extend: 'Ext.window.Window',
     alias: 'widget.commentedit',
-
     title: 'Редактировать комментарий',
     layout: 'fit',
     autoShow: true,
-
     initComponent: function() {
         this.items = [
             {

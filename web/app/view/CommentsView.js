@@ -50,8 +50,11 @@ Ext.define('C.view.CommentsView', {
         { type: 'button', text: 'Сохранить',
             handler: function () {
                 var commentsGrid = Ext.getCmp('commentslist');
-                commentsGrid.getStore().getProxy().setExtraParam('command','save');
-                commentsGrid.getStore().commitChanges();
+                var store = commentsGrid.getStore();
+                store.getProxy().setExtraParam('command','save');
+                store.save();
+                store.load();
+                commentsGrid.updateLayout();
             }
         },'-',
         { type: 'button', text: 'Отмена',

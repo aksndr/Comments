@@ -3,7 +3,6 @@ Ext.define('C.store.TemplatesStore', {
     fields: ['commentTemplate'],
     model: 'C.model.TemplateModel',
     autoLoad: true,
-
     proxy: {
         type: 'ajax',
         url: '/getCommentsTemplates',

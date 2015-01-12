@@ -39,6 +39,10 @@ Ext.define('C.view.Editor', {
                             commntsGrid.getStore().getAt(commentNum).set('comment', Ext.getCmp('editorarea').getValue());
                             commntsGrid.store.sync();
                         }
+                    },{ type: 'button', text: 'Закрыть',
+                        handler: function() {
+                            this.up('window').close();
+                        }
                     }
                 ]
             }

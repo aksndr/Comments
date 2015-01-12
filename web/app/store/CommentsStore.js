@@ -3,6 +3,7 @@ Ext.define('C.store.CommentsStore', {
     fields: ['id', 'document', 'comment'],
     model: 'C.model.CommentModel',
     autoLoad: true,
+    autoSync: false,
     id: 'commentsStore',
     proxy: {
         type: 'ajax',
@@ -14,9 +15,7 @@ Ext.define('C.store.CommentsStore', {
 //        }
         api: {
             read: '/getDocumentComments',
-            create: '/getDocumentComments',
-            update: '/updateDocumentComments',
-            destroy: '/getDocumentComments'
+            update: '/updateDocumentComments'
         },
         reader: {
             type: 'json',
@@ -29,13 +28,13 @@ Ext.define('C.store.CommentsStore', {
             encode: true,
             root: 'comments'
         }
-        , listeners: {
-            write: function (store, operation, options) {
-                console.log(operation);
-            },
-            update: function (store, record, operation, modifiedFieldNames, eOpts ){
-                console.log(operation);
-            }
+
+    } , listeners: {
+        write: function (store, operation, options) {
+            console.log(operation);
+        },
+        update: function (store, record, operation, modifiedFieldNames, eOpts ){
+            console.log(operation);
         }
     }
 });
