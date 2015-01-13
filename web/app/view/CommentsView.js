@@ -61,7 +61,6 @@ Ext.define('C.view.CommentsView', {
             handler: function () {
                 if (commentNum != undefined && savedComment != undefined){
                     var commentsGrid = Ext.getCmp('commentslist');
-                    console.log(savedComment);
                     commentsGrid.getStore().getAt(commentNum).set('comment', savedComment);
                     commentsGrid.getView().refresh();
                 }
